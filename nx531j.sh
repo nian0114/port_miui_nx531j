@@ -51,28 +51,34 @@ fi
 VERSION=`grep "ro.build.version.incremental" output/build.prop|cut -d"=" -f2`
 
 cd $PORT_ROOT/workspace
-#if [ -d output/framework/$CPU ];then
-#    echo "Start Odex System ..."
-#    cp -rf ../tools/odex/* $PWD
-#    cp -rf output/framework superr_miui/system/
-#    cp -rf output/app superr_miui/system/
-#    cp -rf output/vendor/app superr_miui/system/
-#    cp -rf output/priv-app superr_miui/system/
-#    cp -rf output/build.prop superr_miui/system/
+if [ -d output/framework/$CPU ];then
+    echo "Start Odex System ..."
+    cp -rf ../tools/odex/* $PWD
+    cp -rf output/framework superr_miui/system/
+    cp -rf output/app superr_miui/system/
+    cp -rf output/vendor/app superr_miui/system/
+    cp -rf output/priv-app superr_miui/system/
+    cp -rf output/build.prop superr_miui/system/
+   
+    ./superr
 
-#    ./superr
+#move to vendor/app
+    mkdir -p superr_miui/system/vendor/app
+    mv superr_miui/system/app/CABLService superr_miui/system/vendor/app/
+    mv superr_miui/system/app/colorservice superr_miui/system/vendor/app/
+    mv superr_miui/system/app/ims superr_miui/system/vendor/app/
+    mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
+    mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
 
-    #move to vendor/app
-#    mkdir -p superr_miui/system/vendor/app
-#    mv superr_miui/system/app/CABLService superr_miui/system/vendor/app/
-#    mv superr_miui/system/app/colorservice superr_miui/system/vendor/app/
-#    mv superr_miui/system/app/ims superr_miui/system/vendor/app/
-#    mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
-#    mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
+    rm -rf output/app output/priv-app output/vendor/app
+    mv superr_miui/system/app output/
+    mv superr_miui/system/priv-app output/
+    mv superr_miui/system/vendor/app output/vendor/
 
-#    rm -rf tools
-#    rm -rf superr
-#fi
+    rm -rf tools
+    rm -rf superr
+fi
+
 
 echo "Disable Recovery Auto Install ..."
 rm -rf output/recovery-from-boot.p
