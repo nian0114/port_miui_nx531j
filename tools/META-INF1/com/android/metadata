@@ -1,0 +1,3 @@
+post-build=Xiaomi/gemini/gemini:6.0.1/MXB48T/6.8.30:user/release-keys
+post-timestamp=1472490019
+pre-device=gemini

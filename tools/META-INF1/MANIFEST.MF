@@ -1,0 +1,147 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: file_contexts
+SHA1-Digest: bi2X+3IPZrVjyoKMr/eja2b8SZc=
+
+Name: firmware-update/hyp.mbn
+SHA1-Digest: xRxb+4PwguYZuK9mN2tCWjYqtBs=
+
+Name: cust/app/customized/ota-miui-MiGalleryLockscreen/ota-miui-MiGall
+ eryLockscreen.apk
+SHA1-Digest: ncQ6sktIxP9W9AXvxk4YWVXaTz0=
+
+Name: boot.img
+SHA1-Digest: EM89UV44Bbl9z9hmcnrYbXXu3Ic=
+
+Name: firmware-update/NON-HLOS.bin
+SHA1-Digest: WzsSy1InuJoczaEjjCZJDWnGlMQ=
+
+Name: firmware-update/emmc_appsboot.mbn
+SHA1-Digest: fZT1iCVVI14NxCJn2ndcTzwxrsI=
+
+Name: firmware-update/cmnlib64.mbn
+SHA1-Digest: fyDct/EMdfczZ3yrs3MFTKZRhGc=
+
+Name: cust/cust/cn_chinamobile/cust.prop
+SHA1-Digest: jSn2UU78p4bXOiAujkxuj09OENM=
+
+Name: cust/cust/cn_cta/cust.prop
+SHA1-Digest: 5FRi2Wr5r1F9Y419O6dVmdn69pE=
+
+Name: firmware-update/adspso.bin
+SHA1-Digest: JJlehtLkTPHBP4+da78rcN80Y8I=
+
+Name: cust/cust/cn_chinatelecom/cust.prop
+SHA1-Digest: 32DhMSpNHUTJNSHqEr7SVjCKhEk=
+
+Name: cust/cust/cn/ota_customized_applist
+SHA1-Digest: FWYYRtBJ63l2lhZG31tjp4ctFKU=
+
+Name: cust/cust/cn_chinatelecom/ota_customized_applist
+SHA1-Digest: FWYYRtBJ63l2lhZG31tjp4ctFKU=
+
+Name: cust/cust/cn_chinaunicom/ota_customized_applist
+SHA1-Digest: FWYYRtBJ63l2lhZG31tjp4ctFKU=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: 2A2hlMoY6emzAG57BWNKLuWnnLg=
+
+Name: cust/cust/cn_chinamobile-cta/cust.prop
+SHA1-Digest: zkfxV4iL7AMZrEDdr/YjjvFRjf8=
+
+Name: firmware-update/logo.img
+SHA1-Digest: NuB7ajQbPiJQpBrvfvoBoEnoqMg=
+
+Name: cust/app/vanward_applist
+SHA1-Digest: Bca7cukWGeGFVs3QRrGy2JnIQgY=
+
+Name: cust/cust/cn/cust.prop
+SHA1-Digest: 0jn5ru+HhzmLZ1i4naORfkm8lWA=
+
+Name: cust/app/customized/partner-XiMaLaYa/partner-XiMaLaYa.apk
+SHA1-Digest: vNbRJd6jDHNi6vLLDdGBxYHXbfA=
+
+Name: firmware-update/lksecapp.mbn
+SHA1-Digest: 7TtbyK2FQxAaIAPTfl7izYCGjg0=
+
+Name: system.new.dat
+SHA1-Digest: yh76cJYOGYYpYtC/Evko+Zwheqs=
+
+Name: META-INF/com/miui/miui_update
+SHA1-Digest: kzuouaMp0MuyFOoNf3f6H/hJlss=
+
+Name: firmware-update/splash.img
+SHA1-Digest: M3qymH8q+UewyABHIvDvnV1jEh8=
+
+Name: cust/cust/cn_cta/ota_customized_applist
+SHA1-Digest: FWYYRtBJ63l2lhZG31tjp4ctFKU=
+
+Name: firmware-update/rpm.mbn
+SHA1-Digest: iLu3+8xj89mtxB9uyzk4kE0E2hQ=
+
+Name: firmware-update/devcfg.mbn
+SHA1-Digest: IBGM4LJNDMkzHRzV2IcbQ5a1HJU=
+
+Name: firmware-update/BTFM.bin
+SHA1-Digest: Yc0+VFytdJOfYQC/kBz9SftZAfA=
+
+Name: cust/cust/cn/ota_customized_channellist
+SHA1-Digest: 7W3M6LBAW/GzyLh/IU8oZZQw4n0=
+
+Name: cust/app/customized/ota-miui-XiaomiSmartHome/ota-miui-XiaomiSmar
+ tHome.apk
+SHA1-Digest: 1xUMbvukjoGE7DJwsixraC1zy/c=
+
+Name: firmware-update/keymaster.mbn
+SHA1-Digest: tmiNCvsncKI2OBrekQnxzPFKFTU=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: MjcuQ5VLN1PuGOFLv3hvYx4bn7s=
+
+Name: system.transfer.list
+SHA1-Digest: LEO9UyNZ2iEinHAzEl+GGJUi0Wc=
+
+Name: firmware-update/pmic.elf
+SHA1-Digest: oEJH9Zpg0Y8+7Cb0376dMWn30fs=
+
+Name: firmware-update/xbl.elf
+SHA1-Digest: wA013L9CR05rM73YsL8/RprojII=
+
+Name: cust/app/customized/partner-XMRemoteController/partner-XMRemoteC
+ ontroller.apk
+SHA1-Digest: 2vbcxD7Emcokv3jBv46bZITUsfo=
+
+Name: cust/cust/cn_chinaunicom/cust.prop
+SHA1-Digest: EwwU8VHhS34lP9iBcNwymlstatA=
+
+Name: system.patch.dat
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: firmware-update/tz.mbn
+SHA1-Digest: K8dCwiZE06h6TepGlxob4lx5qA8=
+
+Name: cust/cust/cn_chinatelecom/ota_customized_channellist
+SHA1-Digest: 7W3M6LBAW/GzyLh/IU8oZZQw4n0=
+
+Name: cust/cust/cn_chinaunicom/ota_customized_channellist
+SHA1-Digest: 7W3M6LBAW/GzyLh/IU8oZZQw4n0=
+
+Name: META-INF/com/android/otacert
+SHA1-Digest: BjEWgNvC9cNFbRt/mD9RhOsfcls=
+
+Name: cust/cust/cn_cta/ota_customized_channellist
+SHA1-Digest: 7W3M6LBAW/GzyLh/IU8oZZQw4n0=
+
+Name: META-INF/com/android/metadata
+SHA1-Digest: AG3svOKP/kXeBOP1D2g9WL7+qGU=
+
+Name: cust/cust/cn_chinamobile-cta/ota_customized_applist
+SHA1-Digest: wIsueWFysGOK4FM+tHb9NKowiz0=
+
+Name: firmware-update/cmnlib.mbn
+SHA1-Digest: DyIlrFLrApt4Wkzqbhl9E+SPZAE=
+
+Name: cust/cust/cn_chinamobile/ota_customized_applist
+SHA1-Digest: wIsueWFysGOK4FM+tHb9NKowiz0=
+

@@ -1,0 +1,148 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: 15PBXXe/GhHEtqKefi8QUoCGMso=
+
+Name: file_contexts
+SHA1-Digest: nO7Hs9+lxrBOh5TAvUWDhcM+VB0=
+
+Name: boot.img
+SHA1-Digest: wnz9BQO2EObU7wVkTpkNlKDu35s=
+
+Name: cust/app/customized/ota-miui-MiGalleryLockscreen/ota-miui-MiGall
+ eryLockscreen.apk
+SHA1-Digest: b0YJdkFbSnxiR8ZJeUmKi7mQFT8=
+
+Name: firmware-update/hyp.mbn
+SHA1-Digest: +m6XKaxqpTQEx2UmpvJmaDWyFrQ=
+
+Name: firmware-update/NON-HLOS.bin
+SHA1-Digest: I5U38Sjfvc0jBUfImnl3f6oRPsQ=
+
+Name: firmware-update/cmnlib64.mbn
+SHA1-Digest: AL+6Y4K6AZ/xZ//k76KCgPbqaIQ=
+
+Name: firmware-update/emmc_appsboot.mbn
+SHA1-Digest: RFb0C2L2D/2oZthXRmdg05JQTJE=
+
+Name: cust/cust/cn_chinamobile/cust.prop
+SHA1-Digest: di2bJTlY16qJmyV3wAJkWL6lJM8=
+
+Name: cust/cust/cn_cta/cust.prop
+SHA1-Digest: ktrAh6uLquELxQg8FMg0WYKuRC0=
+
+Name: firmware-update/adspso.bin
+SHA1-Digest: t4b2VQ0Ul3VHREJiFbRwxy4GU68=
+
+Name: cust/cust/cn_chinatelecom/cust.prop
+SHA1-Digest: NJhQDmwXtq213dTJq/LiHnCgylM=
+
+Name: cust/cust/cn/ota_customized_applist
+SHA1-Digest: MdyZgF1VmHbgE72d3XesV3JVy5E=
+
+Name: cust/cust/cn_chinatelecom/ota_customized_applist
+SHA1-Digest: Tu/WvzvNL5ZlFM0YoRZYrA3ltdI=
+
+Name: cust/cust/cn_chinaunicom/ota_customized_applist
+SHA1-Digest: wXhp80spgzgXTb9/vaQccQ5RC4E=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: 6CEOfMdcUFJQruaz2aDIKZ6LwZc=
+
+Name: cust/cust/cn_chinamobile-cta/cust.prop
+SHA1-Digest: iRhXkgYPs2kHQSBc+23yTnmwF/o=
+
+Name: firmware-update/logo.img
+SHA1-Digest: 3qvQ5xyoVxvg9omKPOX/ho7VmYY=
+
+Name: cust/app/vanward_applist
+SHA1-Digest: HQOxwh89ImyY0c5T9Ypm9uoYHVU=
+
+Name: cust/cust/cn/cust.prop
+SHA1-Digest: 57g7Wqh/LQY7k5Iafgmt4IqGwsw=
+
+Name: cust/app/customized/partner-XiMaLaYa/partner-XiMaLaYa.apk
+SHA1-Digest: 4eRmYDq9RCY44uNAuPGT5owB60E=
+
+Name: firmware-update/lksecapp.mbn
+SHA1-Digest: JrKEhEqp/0vkKp+zNHwZbcmAGS4=
+
+Name: system.new.dat
+SHA1-Digest: jwPXDew3GGWYrW/yU4o9jbs+TLU=
+
+Name: META-INF/com/miui/miui_update
+SHA1-Digest: L4LhcuIFnqm6+TEQ9lea8gHGwS8=
+
+Name: firmware-update/splash.img
+SHA1-Digest: B0053eB/PE9v353UO5NkmMBhnpw=
+
+Name: cust/cust/cn_cta/ota_customized_applist
+SHA1-Digest: PBPcrggOR6+TJTr4dqdHp6Ut95E=
+
+Name: firmware-update/rpm.mbn
+SHA1-Digest: MctYJP3ztnUU8ssfGumsNEeG0bQ=
+
+Name: firmware-update/BTFM.bin
+SHA1-Digest: S7IWnLszKN2UMsuPhbxspX6k7+4=
+
+Name: firmware-update/devcfg.mbn
+SHA1-Digest: eH12Vzfv+hgfOOXVrBTjAvM/prM=
+
+Name: cust/cust/cn/ota_customized_channellist
+SHA1-Digest: ix9RLmNDNaQrOx//7Vho63deQRM=
+
+Name: cust/app/customized/ota-miui-XiaomiSmartHome/ota-miui-XiaomiSmar
+ tHome.apk
+SHA1-Digest: HK7RIhj9DrbeVnOyumN6Uwv80qs=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: uMQGltRjgz/8LJXR74SqMwiuydE=
+
+Name: firmware-update/keymaster.mbn
+SHA1-Digest: u1xZp/WwNhPrHf+ZkqvIRwG+9Z8=
+
+Name: firmware-update/pmic.elf
+SHA1-Digest: WJo9PjdCfjUVyRe+KYfU27Kc9kw=
+
+Name: system.transfer.list
+SHA1-Digest: 5iVF+uE2+cPIcy9QE0HThqOwIpc=
+
+Name: cust/cust/cn_chinaunicom/cust.prop
+SHA1-Digest: lnMMDxdkRnQ1LHLBuli0VLIjitM=
+
+Name: cust/app/customized/partner-XMRemoteController/partner-XMRemoteC
+ ontroller.apk
+SHA1-Digest: jGk21V1odFLEvWftiGdVFG2hMSY=
+
+Name: firmware-update/xbl.elf
+SHA1-Digest: YLiiu3WSP2mGMVQDRMM79kvtpfk=
+
+Name: system.patch.dat
+SHA1-Digest: 774VWw1Wa8Y+IPKHHCeM6N//yzE=
+
+Name: cust/cust/cn_chinatelecom/ota_customized_channellist
+SHA1-Digest: LIk7ApBBSEwKkZEHphZjkwVM5cw=
+
+Name: firmware-update/tz.mbn
+SHA1-Digest: RmXmn+b8DLonIqQa0DT5JJN6E8g=
+
+Name: cust/cust/cn_chinaunicom/ota_customized_channellist
+SHA1-Digest: KnvcPU1iMpj2ESD5WHyVCPKjrPI=
+
+Name: META-INF/com/android/metadata
+SHA1-Digest: WMCmX/rVrtDLAGjTg14OEnlGsrE=
+
+Name: cust/cust/cn_cta/ota_customized_channellist
+SHA1-Digest: 51s/n+9jbMzeLUOWKblUid4FvEI=
+
+Name: META-INF/com/android/otacert
+SHA1-Digest: q94I3Fg4llyH6eUm7p7l3xLQHWg=
+
+Name: cust/cust/cn_chinamobile-cta/ota_customized_applist
+SHA1-Digest: v2HRoNm7o4X6HZeKAvIWGgRO15I=
+
+Name: cust/cust/cn_chinamobile/ota_customized_applist
+SHA1-Digest: +lB+K2g3t1tyWASS/xJXpKHvKac=
+
+Name: firmware-update/cmnlib.mbn
+SHA1-Digest: V6QKF3nNzD5hax1+bh7Q764Q/Zo=
+
