@@ -1391,7 +1391,7 @@ echo "Final Step ..."
 cd $PORT_ROOT
 rm -rf final/data/miui/app/customized/partner-XMRemoteController
 cp -rf tools/META-INF final/META-INF
-cp -rf workspace/output/* ../final/system/
+cp -rf workspace/output/* final/system/
 #cp -rf workspace/system_new.img final/system.img
 cp -rf tools/firmware-update final/
 rm -rf final/data/miui/app/customized/ota-partner-GooglePinyin-arm64
