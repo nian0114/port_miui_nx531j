@@ -70,8 +70,9 @@ if [ -d output/framework/$CPU ];then
     mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
     mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
 
-    rm -rf output/app output/priv-app output/vendor/app
+    rm -rf output/app output/priv-app output/framework output/vendor/app
     mv superr_miui/system/app output/
+    mv superr_miui/system/framework output/
     mv superr_miui/system/priv-app output/
     mv superr_miui/system/vendor/app output/vendor/
 
