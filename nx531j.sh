@@ -10,7 +10,7 @@ echo "Start to build MIUI9 ($DEVICE)"
 #check if project is still here
 if [ -d "workspace" ]; then
 	echo "Cleaning Up..."
-	rm -rf workspace miui_$DEVICE_*-7.0.zip final/*
+	rm -rf workspace miui_$DEVICE-*-7.0.zip final/*
 else
 	rm -rf miui-$DEVICE-*-7.0.zip final/*
 fi
