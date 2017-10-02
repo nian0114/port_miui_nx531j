@@ -1398,12 +1398,11 @@ echo "Build system.img ..."
 echo "Final Step ..."
 
 cd $PORT_ROOT
-rm -rf final/data/miui/app/customized/partner-XMRemoteController
 cp -rf tools/META-INF final/META-INF
 cp -rf workspace/output/* final/system/
+mv final/system/data-app/* final/data/app/
 #cp -rf workspace/system_new.img final/system.img
 cp -rf tools/firmware-update final/
-rm -rf final/data/miui/app/customized/ota-partner-GooglePinyin-arm64
 cp -rf tools/root final/
 cp -rf tools/nx531j/boot.img final/boot.img
 ./tools/boot_signer/boot_signer /boot tools/nx531j/boot.img tools/boot_signer/security/verity.pk8 tools/boot_signer/security/verity.x509.pem final/boot.img
