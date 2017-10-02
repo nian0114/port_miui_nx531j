@@ -15,6 +15,9 @@ else
 	rm -rf miui-$DEVICE-*-7.0.zip final/*
 fi
 
+#after we use git,empty folder can't upload
+mkdir -p tools/odex/superr_miui/00_project_files/logs
+
 mkdir -p workspace/output workspace/app final/data/miui final/data/app final/system
 
 #Start to extract system(Mac)
