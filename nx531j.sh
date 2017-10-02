@@ -1392,6 +1392,25 @@ sed -i '/audio.offload.passthrough=false/d' output/build.prop
 
 cat ../tools/build.prop.part >> output/build.prop
 
+echo "Start Modify APPS  ..."
+cd app
+
+mkdir -p Settings_tmp
+
+cp -rf ../../tools/apktool* $PWD
+cp -rf ../../tools/git.apply $PWD
+cp -rf ../../tools/rmline.sh $PWD
+
+cp -rf ../output/framework/services.jar services.jar
+./apktool d services.jar &> /dev/null
+./git.apply  ../../tools/patches/system_assest.patch
+./apktool b services.jar.out &> /dev/null
+mv services.jar.out/dist/services.jar ../output/framework/
+rm -rf ../output/framework/oat/arm64/services.odex
+
+cd ..
+rm -rf app
+
 echo "Build system.img ..."
 #./../tools/sefcontext/sefcontext -o file_contexts ../stockrom/file_contexts.bin
 #./../tools/make_ext4fs -T 0 -S file_contexts -l $FSTABLE -a system system_new.img output/ &> /dev/null

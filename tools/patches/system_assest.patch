@@ -1,0 +1,47 @@
+From fed89363aff09173f1b3963428d5cffc009481bf Mon Sep 17 00:00:00 2001
+From: nian0114 <268078545@qq.com>
+Date: Tue, 3 Oct 2017 01:25:45 +0800
+Subject: [PATCH 1/2] remove system self protect
+
+---
+ services.jar.out/smali/com/miui/server/SecurityManagerService.smali | 1 +
+ 1 file changed, 1 insertion(+)
+
+--- a/services.jar.out/smali/com/miui/server/SecurityManagerService.smali
++++ b/services.jar.out/smali/com/miui/server/SecurityManagerService.smali
+@@ -1523,6 +1523,7 @@
+     .param p1, "onlyCore"    # Z
+ 
+     .prologue
++    return-void
+     new-instance v0, Lcom/miui/server/SecurityManagerService$1;
+ 
+     invoke-direct {v0, p0, p1}, Lcom/miui/server/SecurityManagerService$1;-><init>(Lcom/miui/server/SecurityManagerService;Z)V
+-- 
+1.9.1
+
+
+From 552eb1b965846aeeb0fa31603f72d4de8baca79d Mon Sep 17 00:00:00 2001
+From: nian0114 <268078545@qq.com>
+Date: Tue, 3 Oct 2017 01:27:37 +0800
+Subject: [PATCH 2/2] core hack(1/2)
+
+---
+ .../smali/com/android/server/pm/PackageManagerService.smali            | 3 +++
+ 1 file changed, 3 insertions(+)
+
+--- a/services.jar.out/smali/com/android/server/pm/PackageManagerService.smali
++++ b/services.jar.out/smali/com/android/server/pm/PackageManagerService.smali
+@@ -9364,6 +9364,9 @@
+     .param p1, "s2"    # [Landroid/content/pm/Signature;
+ 
+     .prologue
++    const/4 v0, 0x0
++    return v0
++
+     const/4 v3, 0x1
+ 
+     const/4 v5, -0x3
+-- 
+1.9.1
+

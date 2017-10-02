@@ -1,0 +1,71 @@
+From 1c19404678322e9fd5296b08e8df33ed7b47c5b2 Mon Sep 17 00:00:00 2001
+From: nian0114 <268078545@qq.com>
+Date: Sat, 24 Sep 2016 21:29:50 +0800
+Subject: [PATCH] hack signature
+
+---
+ .../smali/java/security/MessageDigest.smali        | 54 ++--------------------
+ 1 file changed, 3 insertions(+), 51 deletions(-)
+
+--- a/core-libart.jar.out/smali/java/security/MessageDigest.smali
++++ b/core-libart.jar.out/smali/java/security/MessageDigest.smali
+@@ -250,53 +250,12 @@
+ .end method
+ 
+ .method public static isEqual([B[B)Z
+-    .locals 5
+-    .param p0, "digesta"    # [B
+-    .param p1, "digestb"    # [B
++    .locals 1
+ 
+-    .prologue
+-    const/4 v2, 0x0
++    const v0, 0x1
+ 
+-    array-length v3, p0
++    return v0
+ 
+-    array-length v4, p1
+-
+-    if-eq v3, v4, :cond_1
+-
+-    :cond_0
+-    :goto_0
+-    return v2
+-
+-    :cond_1
+-    const/4 v1, 0x0
+-
+-    .local v1, "v":I
+-    const/4 v0, 0x0
+-
+-    .local v0, "i":I
+-    :goto_1
+-    array-length v3, p0
+-
+-    if-ge v0, v3, :cond_2
+-
+-    aget-byte v3, p0, v0
+-
+-    aget-byte v4, p1, v0
+-
+-    xor-int/2addr v3, v4
+-
+-    or-int/2addr v1, v3
+-
+-    add-int/lit8 v0, v0, 0x1
+-
+-    goto :goto_1
+-
+-    :cond_2
+-    if-nez v1, :cond_0
+-
+-    const/4 v2, 0x1
+-
+-    goto :goto_0
+ .end method
+ 
+ 
+-- 
+1.9.1
+
