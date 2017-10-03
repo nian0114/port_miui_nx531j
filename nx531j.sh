@@ -1389,6 +1389,8 @@ sed -i '/audio.offload.multiple.enabled=true/d' output/build.prop
 sed -i '/persist.sys.button_jack_profile=volume/d' output/build.prop
 sed -i '/persist.sys.button_jack_switch=0/d' output/build.prop
 sed -i '/audio.offload.passthrough=false/d' output/build.prop
+sed -i '/persist.ts.postmakeup=false/d' output/build.prop
+sed -i '/persist.ts.rtmakeup=false/d' output/build.prop
 
 cat ../tools/build.prop.part >> output/build.prop
 

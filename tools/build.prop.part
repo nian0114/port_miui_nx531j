@@ -11,7 +11,7 @@ persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.data.iwlan.enable=true
 persist.dbg.wfc_avail_ovr=0
-persist.radio.enhance_ecall=true
+
 qcom.hw.aac.encoder=true
 camera.disable_zsl_mode=1
 persist.camera.HAL3.enabled=1
