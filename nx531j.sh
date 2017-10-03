@@ -1,3 +1,4 @@
+#!/bin/bash
 DEVICE=nx531j;
 CPU=arm64;
 FSTABLE=4294967296;
@@ -13,6 +14,14 @@ if [ -d "workspace" ]; then
 	rm -rf workspace miui_$DEVICE-*-7.0.zip final/*
 else
 	rm -rf miui-$DEVICE-*-7.0.zip final/*
+fi
+
+if [ -n "$1" ];then
+	echo $1
+	mkdir -p stockrom
+	wget -O tmp.zip $1
+	unzip tmp.zip -d stockrom/
+	rm -rf tmp.zip
 fi
 
 #after we use git,empty folder can't upload
