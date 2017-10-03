@@ -70,11 +70,11 @@ if [ -d output/framework/$CPU ];then
     mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
     mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
 
-    rm -rf output/app output/priv-app output/framework output/vendor/app
-    mv superr_miui/system/app output/
-    mv superr_miui/system/framework output/
-    mv superr_miui/system/priv-app output/
-    mv superr_miui/system/vendor/app output/vendor/
+    #rm -rf output/app output/priv-app output/framework output/vendor/app
+    #mv superr_miui/system/app output/
+    #mv superr_miui/system/framework output/
+    #mv superr_miui/system/priv-app output/
+    #mv superr_miui/system/vendor/app output/vendor/
 
     rm -rf tools
     rm -rf superr
@@ -1401,7 +1401,7 @@ cp -rf ../../tools/apktool* $PWD
 cp -rf ../../tools/git.apply $PWD
 cp -rf ../../tools/rmline.sh $PWD
 
-cp -rf ../output/framework/services.jar services.jar
+cp -rf ../superr_miui/system/framework/services.jar services.jar
 ./apktool d services.jar &> /dev/null
 ./git.apply  ../../tools/patches/system_assest.patch
 ./apktool b services.jar.out &> /dev/null
