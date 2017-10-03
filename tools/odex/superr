@@ -844,6 +844,13 @@ get_heapsize() {
 		heapsize=$(cat $tools/heapsize)
 	else
 		heapsize=$(grep MemTotal /proc/meminfo | gawk '{ print $2/1024-500 }' | cut -d"." -f1)
+		if [ $heapsize -lt 1024 ]; then
+			cd /var/
+			dd if=/dev/zero of=swapfile bs=1024 count=2097152
+			/sbin/mkswap swapfile
+			/sbin/swapon swapfile
+			heapsize=1024
+		fi
 	fi
 }
 
