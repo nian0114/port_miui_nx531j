@@ -32,61 +32,61 @@ mkdir -p workspace/output workspace/app final/data/miui final/data/app final/sys
 #Start to extract system(Mac)
 echo "Extract system ..."
 if [ -f "stockrom/system.new.dat" ]; then
-    cp -f stockrom/system.transfer.list workspace/
-    cp -f stockrom/system.new.dat workspace/
-    cp -f stockrom/boot.img workspace/
-    cd $PORT_ROOT/workspace
-    ./../tools/sdat2img.py system.transfer.list system.new.dat system.img &> /dev/null
-    sudo mount -t ext4 -o loop system.img output/
-    sudo chown -R $USER:$USER output
+	cp -f stockrom/system.transfer.list workspace/
+	cp -f stockrom/system.new.dat workspace/
+	cp -f stockrom/boot.img workspace/
+	cd $PORT_ROOT/workspace
+	./../tools/sdat2img.py system.transfer.list system.new.dat system.img &> /dev/null
+	sudo mount -t ext4 -o loop system.img output/
+	sudo chown -R $USER:$USER output
 elif [ -f "stockrom/system.img" ];then
-    ./tools/linux-x86/simg2img stockrom/system.img system_new.img
-    if [ -s "system_new.img" ];then
-        mv system_new.img workspace/system.img
-    else
-        cp -f stockrom/system.img workspace/system.img
-    fi
-    cp -f stockrom/boot.img workspace/
-    cd $PORT_ROOT/workspace
-    sudo mount -t ext4 -o loop system.img output/
-    sudo chown -R $USER:$USER output
+	./tools/linux-x86/simg2img stockrom/system.img system_new.img
+	if [ -s "system_new.img" ];then
+		mv system_new.img workspace/system.img
+	else
+		cp -f stockrom/system.img workspace/system.img
+	fi
+	cp -f stockrom/boot.img workspace/
+	cd $PORT_ROOT/workspace
+	sudo mount -t ext4 -o loop system.img output/
+	sudo chown -R $USER:$USER output
 elif [ -d "stockrom/system/framework" ];then
-    cp -rf stockrom/system workspace/
-    cp -f stockrom/boot.img workspace/
+	cp -rf stockrom/system workspace/
+	cp -f stockrom/boot.img workspace/
 else
-   exit
+	exit
 fi
 
 VERSION=`grep "ro.build.version.incremental" output/build.prop|cut -d"=" -f2`
 
 cd $PORT_ROOT/workspace
 if [ -d output/framework/$CPU ];then
-    echo "Start Odex System ..."
-    cp -rf ../tools/odex/* $PWD
-    cp -rf output/framework superr_miui/system/
-    cp -rf output/app superr_miui/system/
-    cp -rf output/vendor/app superr_miui/system/
-    cp -rf output/priv-app superr_miui/system/
-    cp -rf output/build.prop superr_miui/system/
-   
-    ./superr
+	echo "Start Odex System ..."
+	cp -rf ../tools/odex/* $PWD
+	cp -rf output/framework superr_miui/system/
+	cp -rf output/app superr_miui/system/
+	cp -rf output/vendor/app superr_miui/system/
+	cp -rf output/priv-app superr_miui/system/
+	cp -rf output/build.prop superr_miui/system/
 
-#move to vendor/app
-    mkdir -p superr_miui/system/vendor/app
-    mv superr_miui/system/app/CABLService superr_miui/system/vendor/app/
-    mv superr_miui/system/app/colorservice superr_miui/system/vendor/app/
-    mv superr_miui/system/app/ims superr_miui/system/vendor/app/
-    mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
-    mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
+	./superr
 
-    rm -rf output/app output/priv-app output/framework output/vendor/app
-    mv superr_miui/system/app output/
-    mv superr_miui/system/framework output/
-    mv superr_miui/system/priv-app output/
-    mv superr_miui/system/vendor/app output/vendor/
+	#move to vendor/app
+	mkdir -p superr_miui/system/vendor/app
+	mv superr_miui/system/app/CABLService superr_miui/system/vendor/app/
+	mv superr_miui/system/app/colorservice superr_miui/system/vendor/app/
+	mv superr_miui/system/app/ims superr_miui/system/vendor/app/
+	mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
+	mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
 
-    rm -rf tools
-    rm -rf superr
+	rm -rf output/app output/priv-app output/framework output/vendor/app
+	mv superr_miui/system/app output/
+	mv superr_miui/system/framework output/
+	mv superr_miui/system/priv-app output/
+	mv superr_miui/system/vendor/app output/vendor/
+
+	rm -rf tools
+	rm -rf superr
 fi
 
 
@@ -1430,6 +1430,8 @@ fi
 cd final
 zip -q -r "../miui-$DEVICE-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
 cd ..
+
+sshpass -p admin12051 scp sshpass-1.05.tar.gz gybb666@shell.sourceforge.net:/home/frs/project/nx531j-miui9/
 
 sudo umount /dev/loop0
 rm -rf workspace final/*
