@@ -79,11 +79,11 @@ if [ -d output/framework/$CPU ];then
     mv superr_miui/system/app/imssettings superr_miui/system/vendor/app/
     mv superr_miui/system/app/SVIService superr_miui/system/vendor/app/
 
-    #rm -rf output/app output/priv-app output/framework output/vendor/app
-    #mv superr_miui/system/app output/
-    #mv superr_miui/system/framework output/
-    #mv superr_miui/system/priv-app output/
-    #mv superr_miui/system/vendor/app output/vendor/
+    rm -rf output/app output/priv-app output/framework output/vendor/app
+    mv superr_miui/system/app output/
+    mv superr_miui/system/framework output/
+    mv superr_miui/system/priv-app output/
+    mv superr_miui/system/vendor/app output/vendor/
 
     rm -rf tools
     rm -rf superr
@@ -132,27 +132,11 @@ rm -rf output/etc/permissions/android.hardware.consumerir.xml
 rm -rf output/etc/permissions/android.hardware.ethernet.xml
 rm -rf output/etc/permissions/android.hardware.sensor.barometer.xml
 rm -rf output/etc/permissions/android.hardware.sensor.hifi_sensors.xml
-rm -rf output/etc/thermal-engine-8996-a1.conf
-rm -rf output/etc/thermal-engine-8996.conf
-rm -rf output/etc/thermal-engine-8996-high.conf
-rm -rf output/etc/thermal-engine-8996-map.conf
 rm -rf output/lib64/hw/consumerir.msm8996.so
 rm -rf output/lib64/hw/fingerprint.fpc.so
 rm -rf output/lib/hw/consumerir.msm8996.so
 rm -rf output/lib/hw/fingerprint.fpc.so
 rm -rf output/lib/modules/exfat.ko
-rm -rf output/tts/lang_pico/de-DE_gl0_sg.bin
-rm -rf output/tts/lang_pico/de-DE_ta.bin
-rm -rf output/tts/lang_pico/en-GB_kh0_sg.bin
-rm -rf output/tts/lang_pico/en-GB_ta.bin
-rm -rf output/tts/lang_pico/en-US_lh0_sg.bin
-rm -rf output/tts/lang_pico/en-US_ta.bin
-rm -rf output/tts/lang_pico/es-ES_ta.bin
-rm -rf output/tts/lang_pico/es-ES_zl0_sg.bin
-rm -rf output/tts/lang_pico/fr-FR_nk0_sg.bin
-rm -rf output/tts/lang_pico/fr-FR_ta.bin
-rm -rf output/tts/lang_pico/it-IT_cm0_sg.bin
-rm -rf output/tts/lang_pico/it-IT_ta.bin
 rm -rf output/vendor/lib/libactuator_ak7348.so
 rm -rf output/vendor/lib/libactuator_ak7371_a4_primax.so
 rm -rf output/vendor/lib/libactuator_ak7371_a7_liteon.so
@@ -1412,7 +1396,7 @@ cp -rf ../../tools/apktool* $PWD
 cp -rf ../../tools/git.apply $PWD
 cp -rf ../../tools/rmline.sh $PWD
 
-cp -rf ../superr_miui/system/framework/services.jar services.jar
+cp -rf ../output/framework/services.jar services.jar
 ./apktool d services.jar &> /dev/null
 ./git.apply  ../../tools/patches/system_assest.patch
 ./apktool b services.jar.out &> /dev/null
