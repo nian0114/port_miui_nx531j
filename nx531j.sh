@@ -24,12 +24,9 @@ if [ -n "$1" ];then
 	rm -rf tmp.zip
 fi
 
-#after we use git,empty folder can't upload
-mkdir -p tools/odex/superr_miui/00_project_files/logs
-
 mkdir -p workspace/output workspace/app final/data/miui final/data/app final/system
 
-#Start to extract system(Mac)
+#Start to extract system(Linux)
 echo "Extract system ..."
 if [ -f "stockrom/system.new.dat" ]; then
 	cp -f stockrom/system.transfer.list workspace/
@@ -56,6 +53,8 @@ elif [ -d "stockrom/system/framework" ];then
 else
 	exit
 fi
+
+rm -rf stockrom
 
 VERSION=`grep "ro.build.version.incremental" output/build.prop|cut -d"=" -f2`
 
