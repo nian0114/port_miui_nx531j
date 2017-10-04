@@ -1434,7 +1434,7 @@ cp -rf workspace/output/* final/system/
 mv final/system/data-app/* final/data/app/
 #cp -rf workspace/system_new.img final/system.img
 cp -rf tools/firmware-update final/
-cp -rf tools/root final/
+#cp -rf tools/root final/
 cp -rf tools/nx531j/boot.img final/boot.img
 ./tools/boot_signer/boot_signer /boot tools/nx531j/boot.img tools/boot_signer/security/verity.pk8 tools/boot_signer/security/verity.x509.pem final/boot.img
 
@@ -1444,7 +1444,7 @@ if [ -d tools/third-app ];then
 fi
 
 cd final
-zip -q -r "../miui-$DEVICE-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'root' 'firmware-update' 'data' 'RADIO'
+zip -q -r "../miui-$DEVICE-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
 cd ..
 
 sudo umount /dev/loop0
