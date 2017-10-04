@@ -6,7 +6,13 @@ USER=`whoami`
 PORT_ROOT=`pwd`
 #All var is above
 
-echo "Start to build MIUI9 ($DEVICE)"
+if [[ $1 == *Alpha* ]];then
+	Type="Aphla"
+else
+	Type="Developer"
+fi
+
+echo "Start to build MIUI9 ($DEVICE-$Type)"
 
 #check if project is still here
 if [ -d "workspace" ]; then
@@ -1427,10 +1433,8 @@ if [ -d tools/third-app ];then
 fi
 
 cd final
-zip -q -r "../miui-$DEVICE-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
+zip -q -r "../miui-$DEVICE-$Type-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
 cd ..
-
-sshpass -p admin12051 scp sshpass-1.05.tar.gz gybb666@shell.sourceforge.net:/home/frs/project/nx531j-miui9/
 
 sudo umount /dev/loop0
 rm -rf workspace final/*
