@@ -8,6 +8,8 @@ PORT_ROOT=`pwd`
 
 if [[ $1 == *Alpha* ]];then
 	Type="Aphla"
+elif [[ $1 == *xiaomi.eu* ]];then
+	Type="Global"
 else
 	Type="Developer"
 fi
@@ -1405,7 +1407,11 @@ cp -rf ../../tools/rmline.sh $PWD
 
 cp -rf ../output/framework/services.jar services.jar
 ./apktool d services.jar &> /dev/null
-./git.apply  ../../tools/patches/system_assest.patch
+
+if [ $Type != "Global" ];then
+	./git.apply  ../../tools/patches/system_assest.patch
+fi
+
 ./apktool b services.jar.out &> /dev/null
 mv services.jar.out/dist/services.jar ../output/framework/
 rm -rf ../output/framework/oat/arm64/services.odex
