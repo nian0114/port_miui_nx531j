@@ -62,7 +62,7 @@ else
 	exit
 fi
 
-rm -rf stockrom
+rm -rf $PORT_ROOT/stockrom
 
 VERSION=`grep "ro.build.version.incremental" output/build.prop|cut -d"=" -f2`
 
