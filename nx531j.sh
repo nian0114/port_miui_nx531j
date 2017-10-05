@@ -1438,5 +1438,7 @@ cd final
 zip -q -r "../miui-$DEVICE-$Type-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
 cd ..
 
+./upload.sh $DEVICE $Type $VERSION
+
 sudo umount $PORT_ROOT/workspace/output
 rm -rf workspace final/*
