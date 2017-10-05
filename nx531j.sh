@@ -1437,7 +1437,7 @@ cp -rf tools/nx531j/boot.img final/boot.img
 
 if [ -d tools/third-app ];then
 	echo "Add Third App ..."
-	cp -rf tools/third-app/* final/data/app/
+	cp -rf tools/third-app/* final/system/priv-app/
 fi
 
 cd final
