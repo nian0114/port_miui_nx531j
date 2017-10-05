@@ -18,8 +18,10 @@ echo "Start to build MIUI9 ($DEVICE-$Type)"
 if [ -d "workspace" ]; then
 	echo "Cleaning Up..."
 	rm -rf workspace miui_$DEVICE-*-7.0.zip final/*
+        rm -rf /var/www/html/miui-$DEVICE-$Type-*-7.0.zip
 else
 	rm -rf miui-$DEVICE-*-7.0.zip final/*
+	rm -rf /var/www/html/miui-$DEVICE-$Type-*-7.0.zip
 fi
 
 if [ -n "$1" ];then
