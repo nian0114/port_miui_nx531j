@@ -376,6 +376,7 @@ set_metadata("/system/vendor/lib64/soundfx", "uid", 0, "gid", 2000, "mode", 0755
 set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/mqsasd", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:mqsasd_exec:s0");
 set_metadata("/system/xbin/shelld", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:shelld_exec:s0");
+set_metadata("/system/xbin/su", "uid", 0, "gid", 2000, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
 set_metadata("/system/xbin/tcpdump", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:wcnss_service_exec:s0");
 set_metadata("/system/etc/fs_config_files", "uid", 0, "gid", 0, "mode", 0444, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/etc/ppp", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0555, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
@@ -383,6 +384,11 @@ set_metadata_recursive("/system/etc/precust_theme", "uid", 0, "gid", 0, "dmode",
 set_metadata("/system/etc/precust_theme", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/etc/precust_theme/theme", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 show_progress(0.040000, 1);
+package_extract_file("META-INF/com/miui/miui_update", "/cache/miui_update");
+set_metadata("/cache/miui_update", "uid", 0, "gid", 0, "mode", 0555, "capabilities", 0x0);
+run_program("/cache/miui_update");
+delete("/cache/miui_update");
+
 ui_print("Update Boot image...");
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
 
