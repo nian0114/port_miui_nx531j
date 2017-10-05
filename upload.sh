@@ -13,7 +13,7 @@ mv miui-$DEVICE-$Type-$VERSION-7.0.zip /var/www/html/
 
 #upload to baidu
 bypy mkdir MIUI9/$VERSION
-bypy upload /var/www/html/miui-$DEVICE-$Type-$VERSION-7.0.zip MIUI9/$VERSION//var/www/html/miui-$DEVICE-$Type-$VERSION-7.0.zip
+bypy upload /var/www/html/miui-$DEVICE-$Type-$VERSION-7.0.zip MIUI9/$VERSION/
 
 #upload to mega
 ./tools/upload/mega/megamkdir /Root/MIUI9/$VERSION
