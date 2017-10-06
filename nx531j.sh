@@ -72,11 +72,11 @@ cd $PORT_ROOT/workspace
 if [ -d output/framework/$CPU ];then
 	echo "Start Odex System ..."
 	cp -rf ../tools/odex/* $PWD
-	cp -rf output/framework superr_miui/system/
-	cp -rf output/app superr_miui/system/
-	cp -rf output/vendor/app superr_miui/system/
-	cp -rf output/priv-app superr_miui/system/
-	cp -rf output/build.prop superr_miui/system/
+	cp -rpf output/framework superr_miui/system/
+	cp -rpf output/app superr_miui/system/
+	cp -rpf output/vendor/app superr_miui/system/
+	cp -rpf output/priv-app superr_miui/system/
+	cp -rpf output/build.prop superr_miui/system/
 
 	./superr
 
