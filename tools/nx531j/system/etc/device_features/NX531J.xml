@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+    <!--whether the device is pad-->
+    <bool name="is_pad">false</bool>
+    <!--whether the device is xiaomi-->
+    <bool name="is_xiaomi">false</bool>
+    <!--whether the device is hongmi-->
+    <bool name="is_hongmi">false</bool>
+    <!--whether the device support alpha optimized-->
+    <bool name="support_alpha_optimized">true</bool>
+    <!--whether the device supports torch-->
+    <bool name="support_torch">true</bool>
+    <!--whether install the fm app-->
+    <bool name="support_fm">false</bool>
+    <!--whether the device supports oldman mode-->
+    <bool name="support_oldman_mode">false</bool>
+    <!--whether the device is dual sim card-->
+    <bool name="support_dual_sim_card">true</bool>
+    <!--whether the device support 4G+-->
+    <bool name="support_ca">true</bool>
+    <!--whether the device has dual systems-->
+    <bool name="is_dual_system">false</bool>
+    <!--whether the device is emulated sdcard-->
+    <bool name="is_emulated_sdcard">true</bool>
+    <!--whether the device has dual sd card-->
+    <bool name="support_dual_sd_card">false</bool>
+    <!--whether the device supports bt debug trace-->
+    <bool name="btdebug_enabled">false</bool>
+    <!--whether the device supports page layout-->
+    <bool name="support_page_layout">true</bool>
+    <!--whether the device supports record param-->
+    <bool name="support_record_param">true</bool>
+    <!--whether the device supports interview record param-->
+    <bool name="support_interview_record_param">true</bool>
+    <!--whether the device supports stereo record-->
+    <bool name="support_stereo_record">true</bool>
+    <!--whether the device supports screen paper mode-->
+    <bool name="support_screen_paper_mode">false</bool>
+    <!--whether the device supports screen key position swap-->
+    <bool name="support_screen_key_swap">true</bool>
+    <!--whether the device supports led light-->
+    <bool name="support_led_light">true</bool>
+    <!--whether the device supports button light-->
+    <bool name="support_button_light">true</bool>
+    <!--whether the device supports emulated storage-->
+    <bool name="support_emulated_storage">true</bool>
+    <!--whether the device supports internal sdcard-->
+    <bool name="support_internal_sdcard">false</bool>
+    <!--whether the device supports power mode-->
+    <bool name="support_power_mode">false</bool>
+    <!--whether the device supports dolby-->
+    <bool name="support_dolby">true</bool>
+    <!--which screen effect options should be show-->
+    <integer name="screen_effect_supported">7</integer>
+    <!--whether support the new automatic brightness logic-->
+    <bool name="support_autobrightness_optimize">true</bool>
+    <!--whether the device supports wapi-->
+    <bool name="support_wapi">true</bool>
+    <!--whether the device is mediatek-->
+    <bool name="is_mediatek">false</bool>
+    <!--whether the device supports media feedback-->
+    <bool name="support_media_feedback">false</bool>
+    <!--whether the device supports phone call noise suppression-->
+    <bool name="support_phone_call_noise_suppression">false</bool>
+    <!--whether the device supports touch sensitive-->
+    <bool name="support_touch_sensitive">false</bool>
+    <!--whether the device supports broadcom wapi-->
+    <bool name="support_broadcom_wapi">true</bool>
+    <!--whether the device supports erase external storage-->
+    <bool name="support_erase_external_storage">true</bool>
+    <!--whether the device supports headset-->
+    <bool name="support_headset">false</bool>
+    <!--whether the device supports nvdia wifi display-->
+    <bool name="support_nvdia_wifi_display">false</bool>
+    <!--whether the device supports eap sim-->
+    <bool name="support_eap_sim">false</bool>
+    <!--whether the device supports screen optimize-->
+    <bool name="support_screen_optimize">true</bool>
+    <!--whether the device supports agps-->
+    <bool name="support_agps">true</bool>
+    <!--whether the device supports feedback level-->
+    <bool name="support_feedback_level">false</bool>
+    <!--whether the device supports miui lite-->
+    <bool name="enable_miui_lite">false</bool>
+    <!--whether the device supports steps_provider-->
+    <bool name="support_steps_provider">true</bool>
+    <!--whether the device support hall sensor-->
+    <bool name="support_hall_sensor">true</bool>
+    <!--whether the device supports hifi-->
+    <bool name="support_hifi">false</bool>
+    <!--whether the device supports agps parameters-->
+    <bool name="support_agps_paras">true</bool>
+    <!--whether the device supports agps roaming-->
+    <bool name="support_agps_roaming">false</bool>
+    <!--whether the device supports IR-->
+    <bool name="support_ir">true</bool>
+    <!-- whether the device supports app hiding-->
+    <bool name="support_app_hiding">true</bool>
+    <!--whether the device can read cpu4 freq-->
+    <bool name="is_read_cpu4_freq">false</bool>
+    <!--whether the device supports cit-->
+    <bool name="support_cit">false</bool>
+    <!--whether the device is xiaomi-->
+    <bool name="is_xiaomi_device">false</bool>
+    <!--whether the device supports encrypt-->
+    <bool name="support_device_encrypt">true</bool>
+    <!-- whether support double tap to wake up device -->
+    <bool name="support_gesture_wakeup">true</bool>
+    <!--whether show my device-->
+    <bool name="support_my_device">true</bool>
+    <!--whether show basic info items-->
+    <bool name="support_show_basic_items">true</bool>
+    <!--the vendor feature, it's value may be qcom,mediatek,leadcore or nvidia-->
+    <string name="vendor">qcom</string>
+    <!--release time for the device, should be an unix timestamp-->
+    <string name="release_time">1467043200000</string>
+    <!--0:not support 1:close gamut 2:close ce-->
+    <integer name="screen_standard_mode">0</integer>
+    <!--max number of burst images one time -->
+    <integer name="burst_shoot_count">100</integer>
+    <!--max cpu freq of the device-->
+    <integer name="cpu_max_freq">215</integer>
+    <!--whether the device supports smart cover with small window-->
+    <bool name="support_small_win_cover">false</bool>
+    <!-- fingerprint navigation event name list -->
+    <string-array name="fp_nav_event_name_list">
+        <item>uinput-fpc</item>
+    </string-array>
+    <bool name="support_tap_fingerprint_sensor_to_home">false</bool>
+    <!-- type of soter finger pay, config by owner of soter -->
+    <integer name="type_soter_finger_pay">0</integer>
+    <!--NFC related-->
+    <bool name="support_se_route">false</bool>
+    <!--wheater the device supports persist screen color in driver-->
+    <bool name="support_screen_color_persist">false</bool>
+    <!--cpu combination -->
+    <integer name="cpu_combination">22</integer>
+    <integer name="xo_therm">28</integer>
+    <integer name="case_therm">27</integer>
+    <!--whether the middle keycode is KEYCODE_DPAD_CENTER-->
+    <bool name="middle_keycode_is_dpad_center">false</bool>
+    <!--support nfc search -->
+    <bool name="support_nfc">true</bool>
+    <!--Add for the system data-app which could uninstall by user-->
+    <string-array name="system_data_packagename_list">
+        <item>com.xiaomi.pass</item>
+        <item>com.xiaomi.scanner</item>
+        <item>com.xiaomi.gamecenter</item>
+        <item>com.miui.weather2</item>
+        <item>com.miui.notes</item>
+        <item>com.miui.compass</item>
+        <item>com.miui.calculator</item>
+        <item>com.android.email</item>
+        <item>com.miui.cleanmaster</item>
+        <item>com.mi.misupport</item>
+        <item>com.duokan.reader</item>
+        <item>com.mfashiongallery.emag</item>
+        <item>com.miui.personalassistant</item>
+        <item>com.miui.voip</item>
+        <item>com.miui.yellowpage</item>
+        <item>com.xiaomi.midrop</item>
+        <item>com.android.midrive</item>
+    </string-array>
+    <!--system data-app path list -->
+    <string-array name="system_data_path_list">
+        <item>/data/app/XMPass/XMPass.apk</item>
+        <item>/data/app/MiuiScanner/MiuiScanner.apk</item>
+        <item>/data/app/GameCenter/GameCenter.apk</item>
+        <item>/data/app/Weather/Weather.apk</item>
+        <item>/data/app/Notes/Notes.apk</item>
+        <item>/data/app/MiuiCompass/MiuiCompass.apk</item>
+        <item>/data/app/Calculator/Calculator.apk</item>
+        <item>/data/app/Email/Email.apk</item>
+        <item>/data/app/CleanMaster/CleanMaster.apk</item>
+        <item>/data/app/MiSupport/MiSupport.apk</item>
+        <item>/data/app/com.duokan.reader/com.duokan.reader.apk</item>
+        <item>/data/app/MiGalleryLockscreen/MiGalleryLockscreen.apk</item>
+        <item>/data/app/PersonalAssistant/PersonalAssistant.apk</item>
+        <item>/data/app/MiuiVoip/MiuiVoip.apk</item>
+        <item>/data/app/YellowPage/YellowPage.apk</item>
+        <item>/data/app/MiDrop/MiDrop.apk</item>
+        <item>/data/app/MiDrive/MiDrive.apk</item>
+    </string-array>
+    <bool name="support_audio_loopback">true</bool>
+    <bool name="support_new_silentmode">true</bool>
+    <!-- whether CN hardware can flash Global rom -->
+    <bool name="enable_flash_global">true</bool>
+</features>
