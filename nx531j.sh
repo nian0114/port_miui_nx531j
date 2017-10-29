@@ -34,7 +34,10 @@ if [ -n "$1" ];then
 	rm -rf tmp.zip
 fi
 
-mkdir -p workspace/output workspace/app final/data/miui final/data/app final/system
+mkdir -p workspace/output workspace/app final/data/miui final/data/app final/system target
+
+mv target/$DEVICE-$Type-last_files.zip target/$DEVICE-$Type-llast_files.zip
+mv target/$DEVICE-$Type-target_files.zip target/$DEVICE-$Type-last_target_files.zip
 
 #Start to extract system(Linux)
 echo "Extract system ..."
@@ -1423,6 +1426,22 @@ echo "Build system.img ..."
 #./../tools/sefcontext/sefcontext -o file_contexts ../stockrom/file_contexts.bin
 #./../tools/make_ext4fs -T 0 -S file_contexts -l $FSTABLE -a system system_new.img output/ &> /dev/null
 
+echo "Build target_files.zip && OTA ..."
+cp -rf ../tools/OTA .
+cp -rf ../tools/nx531j/boot.img OTA/tools/target_files_template/BOOTABLE_IMAGES/boot.img
+cp -rf output/* OTA/tools/target_files_template/SYSTEM/
+rm -rf OTA/tools/target_files_template/SYSTEM/xbin/su
+cd OTA
+. build/envsetup.sh
+cd tools/target_files_template
+zip -q -r "../../../../target/$DEVICE-$Type-target_files.zip" *
+cd ../../..
+
+if [ -f ../target/$DEVICE-$Type-last_target_files.zip ]; then
+    ./OTA/tools/releasetools/ota_from_target_files -k OTA/build/security/testkey -i ../target/$DEVICE-last_target_files.zip ../target/$DEVICE-$Type-target_files.zip ../OTA-$DEVICE-$Type-$VERSION.zip
+fi
+
+cd ../
 echo "Final Step ..."
 
 cd $PORT_ROOT
