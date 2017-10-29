@@ -3,7 +3,7 @@ DEVICE=nx531j;
 CPU=arm64;
 FSTABLE=4294967296;
 USER=`whoami`
-PORT_ROOT=`pwd`
+PORTS_ROOT=`pwd`
 #All var is above
 
 if [[ $1 == *Alpha* ]];then
@@ -36,8 +36,10 @@ fi
 
 mkdir -p workspace/output workspace/app final/data/miui final/data/app final/system target
 
-mv target/$DEVICE-$Type-last_files.zip target/$DEVICE-$Type-llast_files.zip
-mv target/$DEVICE-$Type-target_files.zip target/$DEVICE-$Type-last_target_files.zip
+if [ -f target/$DEVICE-$Type-target_files ]; then
+	mv target/$DEVICE-$Type-last_files.zip target/$DEVICE-$Type-llast_files.zip
+	mv target/$DEVICE-$Type-target_files.zip target/$DEVICE-$Type-last_target_files.zip
+fi
 
 #Start to extract system(Linux)
 echo "Extract system ..."
@@ -45,7 +47,7 @@ if [ -f "stockrom/system.new.dat" ]; then
 	cp -f stockrom/system.transfer.list workspace/
 	cp -f stockrom/system.new.dat workspace/
 	cp -f stockrom/boot.img workspace/
-	cd $PORT_ROOT/workspace
+	cd $PORTS_ROOT/workspace
 	./../tools/sdat2img.py system.transfer.list system.new.dat system.img &> /dev/null
 	sudo mount -t ext4 -o loop system.img output/
 	sudo chown -R $USER:$USER output
@@ -57,7 +59,7 @@ elif [ -f "stockrom/system.img" ];then
 		cp -f stockrom/system.img workspace/system.img
 	fi
 	cp -f stockrom/boot.img workspace/
-	cd $PORT_ROOT/workspace
+	cd $PORTS_ROOT/workspace
 	sudo mount -t ext4 -o loop system.img output/
 	sudo chown -R $USER:$USER output
 elif [ -d "stockrom/system/framework" ];then
@@ -67,11 +69,11 @@ else
 	exit
 fi
 
-rm -rf $PORT_ROOT/stockrom
+rm -rf $PORTS_ROOT/stockrom
 
 VERSION=`grep "ro.build.version.incremental" output/build.prop|cut -d"=" -f2`
 
-cd $PORT_ROOT/workspace
+cd $PORTS_ROOT/workspace
 if [ -d output/framework/$CPU ];then
 	echo "Start Odex System ..."
 	cp -rf ../tools/odex/* $PWD
@@ -1444,7 +1446,7 @@ fi
 cd ../
 echo "Final Step ..."
 
-cd $PORT_ROOT
+cd $PORTS_ROOT
 cp -rf tools/META-INF final/META-INF
 cp -rf workspace/output/* final/system/
 mv final/system/data-app/* final/data/app/
@@ -1465,5 +1467,5 @@ cd ..
 
 ./upload.sh $DEVICE $Type $VERSION
 
-sudo umount $PORT_ROOT/workspace/output
+sudo umount $PORTS_ROOT/workspace/output
 rm -rf workspace final/*
