@@ -19,11 +19,13 @@ echo "Start to build MIUI9 ($DEVICE-$Type)"
 #check if project is still here
 if [ -d "workspace" ]; then
 	echo "Cleaning Up..."
-	rm -rf workspace miui_$DEVICE-*-7.0.zip final/*
+	rm -rf workspace miui_$DEVICE-*-7.0.zip OTA-$DEVICE-$Type-*.zip final/*
         rm -rf /var/www/html/miui-$DEVICE-$Type-*-7.0.zip
+	rm -rf /var/www/html/OTA-$DEVICE-$Type-*.zip
 else
-	rm -rf miui-$DEVICE-*-7.0.zip final/*
+	rm -rf miui-$DEVICE-*-7.0.zip OTA-$DEVICE-$Type-*.zip final/*
 	rm -rf /var/www/html/miui-$DEVICE-$Type-*-7.0.zip
+	rm -rf /var/www/html/OTA-$DEVICE-$Type-*.zip
 fi
 
 if [ -n "$1" ];then
@@ -1439,13 +1441,9 @@ cd OTA
 . build/envsetup.sh
 cd tools/target_files_template
 zip -q -r "../../../../target/$DEVICE-$Type-target_files.zip" *
-cd ../../..
+cd ../../../..
+rm -rf OTA
 
-if [ -f ../target/$DEVICE-$Type-last_target_files.zip ]; then
-    ./OTA/tools/releasetools/ota_from_target_files -k OTA/build/security/testkey -i ../target/$DEVICE-$Type-last_target_files.zip ../target/$DEVICE-$Type-target_files.zip ../OTA-$DEVICE-$Type-$VERSION.zip
-fi
-
-cd ../
 echo "Final Step ..."
 
 cd $PORTS_ROOT
@@ -1466,7 +1464,11 @@ cd final
 zip -q -r "../miui-$DEVICE-$Type-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
 cd ..
 
-./upload.sh $DEVICE $Type $VERSION
-
 sudo umount $PORTS_ROOT/workspace/output
 rm -rf workspace final/*
+
+if [ -f target/$DEVICE-$Type-last_target_files.zip ]; then
+    ./tools/OTA/tools/releasetools/ota_from_target_files -k tools/OTA/build/security/testkey -i target/$DEVICE-$Type-last_target_files.zip target/$DEVICE-$Type-target_files.zip OTA-$DEVICE-$Type-$VERSION.zip
+fi
+./upload.sh $DEVICE $Type $VERSION
+
