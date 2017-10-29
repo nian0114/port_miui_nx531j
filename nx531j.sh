@@ -1440,7 +1440,7 @@ zip -q -r "../../../../target/$DEVICE-$Type-target_files.zip" *
 cd ../../..
 
 if [ -f ../target/$DEVICE-$Type-last_target_files.zip ]; then
-    ./OTA/tools/releasetools/ota_from_target_files -k OTA/build/security/testkey -i ../target/$DEVICE-last_target_files.zip ../target/$DEVICE-$Type-target_files.zip ../OTA-$DEVICE-$Type-$VERSION.zip
+    ./OTA/tools/releasetools/ota_from_target_files -k OTA/build/security/testkey -i ../target/$DEVICE-$Type-last_target_files.zip ../target/$DEVICE-$Type-target_files.zip ../OTA-$DEVICE-$Type-$VERSION.zip
 fi
 
 cd ../
