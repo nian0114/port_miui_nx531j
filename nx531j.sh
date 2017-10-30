@@ -1438,7 +1438,6 @@ cp -rf ../tools/nx531j/boot.img OTA/tools/target_files_template/BOOTABLE_IMAGES/
 cp -rf output/* OTA/tools/target_files_template/SYSTEM/
 rm -rf OTA/tools/target_files_template/SYSTEM/xbin/su
 cd OTA
-. build/envsetup.sh
 cd tools/target_files_template
 zip -q -r "../../../../target/$DEVICE-$Type-target_files.zip" *
 cd ../../../..
@@ -1468,7 +1467,10 @@ sudo umount $PORTS_ROOT/workspace/output
 rm -rf workspace final/*
 
 if [ -f target/$DEVICE-$Type-last_target_files.zip ]; then
-    ./tools/OTA/tools/releasetools/ota_from_target_files -k tools/OTA/build/security/testkey -i target/$DEVICE-$Type-last_target_files.zip target/$DEVICE-$Type-target_files.zip OTA-$DEVICE-$Type-$VERSION.zip
+    cd tools/OTA
+    . build/envsetup.sh
+    ./tools/releasetools/ota_from_target_files -k build/security/testkey -i ../../target/$DEVICE-$Type-last_target_files.zip ../../target/$DEVICE-$Type-target_files.zip ../../OTA-$DEVICE-$Type-$VERSION.zip
+    cd $PORTS_ROOT
 fi
 ./upload.sh $DEVICE $Type $VERSION
 
