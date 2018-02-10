@@ -1430,7 +1430,7 @@ echo "Build system.img ..."
 #./../tools/make_ext4fs -T 0 -S file_contexts -l $FSTABLE -a system system_new.img output/ &> /dev/null
 
 echo "Build target_files.zip && OTA ..."
-mv output/data-app/* ../final/data/app/
+cp output/data-app/* ../final/data/app/
 
 cp -rf ../tools/OTA .
 cp -rf ../tools/nx531j/boot.img OTA/tools/target_files_template/BOOTABLE_IMAGES/boot.img
