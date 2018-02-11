@@ -1475,6 +1475,16 @@ fi
 mv services.jar.out/dist/services.jar ../output/framework/
 rm -rf ../output/framework/oat/arm64/services.odex
 
+cp -rf ../output/framework/framework.jar framework.jar
+./apktool d framework.jar &> /dev/null
+
+cp -rf ../../tools/nx531j/modify_apps/framework/smali/android/hardware/fingerprint/* framework.jar.out/smali/android/hardware/fingerprint
+cp -rf ../../tools/nx531j/modify_apps/framework/smali_classes2/org/ifaa framework.jar.out/smali_classes2/org/
+
+./apktool b framework.jar.out &> /dev/null
+mv framework.jar.out/dist/framework.jar ../output/framework/
+rm -rf ../output/framework/oat/arm64/framework.odex
+
 mkdir -p framework-res_tmp
 mv ../output/framework/framework-res.apk framework-res.apk
 ./apktool d framework-res.apk &> /dev/null
