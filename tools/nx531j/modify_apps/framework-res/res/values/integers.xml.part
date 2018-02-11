@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_screenBrightnessSettingDefault">40</integer>
+    <integer name="config_autoBrightnessAmbientLightHorizon">1000</integer>
+    <integer name="config_screenBrightnessDim">15</integer>
+    <integer name="config_screenBrightnessDark">15</integer>
+    <integer name="config_backlightBits">8</integer>
+    <integer name="config_brightness_ramp_rate_slow">1</integer>
+    <integer name="config_brightness_brighten_rate">50</integer>
+    <integer name="config_brightness_dark_threhold">40</integer>
+    <integer name="config_brightness_darktime1_second">2</integer>
+    <integer name="config_brightness_darktime2_second">4</integer>
+    <integer name="config_manual_brightness_rate_slow">40</integer>
+</resources>

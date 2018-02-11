@@ -6,6 +6,8 @@ USER=`whoami`
 PORTS_ROOT=`pwd`
 #All var is above
 
+XMLMERGYTOOL=$PORTS_ROOT/tools/ResValuesModify/jar/ResValuesModify
+
 if [[ $1 == *Alpha* ]];then
 	Type="Aphla"
 elif [[ $1 == *xiaomi.eu* ]];then
@@ -1458,8 +1460,6 @@ cat ../tools/build.prop.part >> output/build.prop
 echo "Start Modify APPS  ..."
 cd app
 
-mkdir -p Settings_tmp
-
 cp -rf ../../tools/apktool* $PWD
 cp -rf ../../tools/git.apply $PWD
 cp -rf ../../tools/rmline.sh $PWD
@@ -1474,6 +1474,18 @@ fi
 ./apktool b services.jar.out &> /dev/null
 mv services.jar.out/dist/services.jar ../output/framework/
 rm -rf ../output/framework/oat/arm64/services.odex
+
+mkdir -p framework-res_tmp
+mv ../output/framework/framework-res.apk framework-res.apk
+./apktool d framework-res.apk &> /dev/null
+$XMLMERGYTOOL ../../tools/nx531j/modify_apps/framework-res/res/values framework-res/res/values
+./apktool b framework-res &> /dev/null
+mv framework-res.apk framework-res_tmp/framework-res.zip
+cd framework-res_tmp
+unzip framework-res.zip &> /dev/null
+cp -rf ../framework-res/build/apk/resources.arsc resources.arsc
+zip -q -r "../../output/framework/framework-res.apk" 'assets' 'resources.arsc' 'res' 'AndroidManifest.xml' &> /dev/null
+cd ..
 
 cd ..
 rm -rf app
