@@ -2,6 +2,6 @@
 
 curdir=`pwd`
 
-java -jar $curdir/tools/ResValuesModify/jar/ResValuesModify.jar $*
+java -jar $curdir/../../tools/ResValuesModify/jar/ResValuesModify.jar $*
 
 
