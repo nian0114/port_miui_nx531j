@@ -47,10 +47,6 @@ fi
 
 mkdir -p workspace/output workspace/app final/data/miui final/data/app final/system target
 
-if [ -f target/$DEVICE-$Type-target_files.zip ]; then
-	mv target/$DEVICE-$Type-target_files.zip target/$DEVICE-$Type-last_target_files.zip
-fi
-
 #Start to extract system(Linux)
 echo "Extract system ..."
 if [ -f "stockrom/system.new.dat" ]; then
