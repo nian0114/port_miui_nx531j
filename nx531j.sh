@@ -34,7 +34,7 @@ fi
 if [ -n "$1" ];then
 	echo $1
 	mkdir -p stockrom
-	wget -O tmp.zip $1
+	wget -O tmp.zip $1 >/dev/null 2>&1
 	unzip tmp.zip -d stockrom/
 	rm -rf tmp.zip
 elif [ -n "$DOWNLOAD_LINK" ];then
