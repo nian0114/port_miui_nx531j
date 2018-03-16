@@ -4,6 +4,7 @@ CPU=arm64;
 FSTABLE=4294967296;
 USER=`whoami`
 PORTS_ROOT=`pwd`
+DOWNLOAD_LINK=`cat link`
 #All var is above
 
 XMLMERGYTOOL=$PORTS_ROOT/tools/ResValuesModify/jar/ResValuesModify
@@ -22,7 +23,7 @@ echo "Start to build MIUI9 ($DEVICE-$Type)"
 if [ -d "workspace" ]; then
 	echo "Cleaning Up..."
 	rm -rf workspace miui_$DEVICE-*-7.0.zip OTA-$DEVICE-$Type-*.zip final/*
-        rm -rf /var/www/html/miui-$DEVICE-$Type-*-7.0.zip
+	rm -rf /var/www/html/miui-$DEVICE-$Type-*-7.0.zip
 	rm -rf /var/www/html/OTA-$DEVICE-$Type-*.zip
 else
 	rm -rf miui-$DEVICE-*-7.0.zip OTA-$DEVICE-$Type-*.zip final/*
@@ -34,6 +35,12 @@ if [ -n "$1" ];then
 	echo $1
 	mkdir -p stockrom
 	wget -O tmp.zip $1
+	unzip tmp.zip -d stockrom/
+	rm -rf tmp.zip
+elif [ -n "$DOWNLOAD_LINK" ];then
+	echo $DOWNLOAD_LINK
+	mkdir -p stockrom
+	wget -O tmp.zip $DOWNLOAD_LINK
 	unzip tmp.zip -d stockrom/
 	rm -rf tmp.zip
 fi
@@ -1511,8 +1518,7 @@ cp -rf ../tools/OTA .
 cp -rf ../tools/nx531j/boot.img OTA/tools/target_files_template/BOOTABLE_IMAGES/boot.img
 cp -rf output/* OTA/tools/target_files_template/SYSTEM/
 rm -rf OTA/tools/target_files_template/SYSTEM/xbin/su
-cd OTA
-cd tools/target_files_template
+cd OTA/tools/target_files_template
 zip -q -r "../../../../target/$DEVICE-$Type-target_files.zip" *
 cd ../../../..
 rm -rf OTA
@@ -1540,11 +1546,10 @@ cd ..
 sudo umount $PORTS_ROOT/workspace/output
 rm -rf workspace final/*
 
-if [ -f target/$DEVICE-$Type-last_target_files.zip ]; then
+if [ -f /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ]; then
     cd tools/OTA
     . build/envsetup.sh
-    ./tools/releasetools/ota_from_target_files -k build/security/testkey -i ../../target/$DEVICE-$Type-last_target_files.zip ../../target/$DEVICE-$Type-target_files.zip ../../OTA-$DEVICE-$Type-$VERSION.zip
-    cd $PORTS_ROOT
+    ./tools/releasetools/ota_from_target_files -k build/security/testkey -i /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ../../target/$DEVICE-$Type-target_files.zip ./OTA-$DEVICE-$Type-$VERSION.zip
+    mv ../../target/$DEVICE-$Type-target_files.zip /tmp/cosfs/target/$DEVICE-$Type-target_files.zip
+		cd $PORTS_ROOT
 fi
-./upload.sh $DEVICE $Type $VERSION
-
