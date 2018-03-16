@@ -1546,6 +1546,7 @@ if [ -f /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ]; then
     cd tools/OTA
     . build/envsetup.sh
     ./tools/releasetools/ota_from_target_files -k build/security/testkey -i /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ../../target/$DEVICE-$Type-target_files.zip ./OTA-$DEVICE-$Type-$VERSION.zip
-    mv ../../target/$DEVICE-$Type-target_files.zip /tmp/cosfs/target/$DEVICE-$Type-target_files.zip
 		cd $PORTS_ROOT
 fi
+
+mv target/$DEVICE-$Type-target_files.zip /tmp/cosfs/miui_target/$DEVICE-$Type-target_files.zip
