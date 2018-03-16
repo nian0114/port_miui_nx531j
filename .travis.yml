@@ -1,22 +1,18 @@
 language: android
-
 sudo: true
-
 android:
   components:
   - build-tools-26.0.2
-
 script:
-- ./nx531j.sh
-
+- "./nx531j.sh"
 before_install:
-- sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config p7zip-full unzip
-- ./cos.sh
-
+- sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev
+  libssl-dev libxml2-dev make pkg-config p7zip-full unzip
+- "./cos.sh"
 deploy:
   provider: releases
   api_key:
-    secure: 0Mvm5TWaIt4YJkA0S5Q24cDBx3v7zNwkMxaW+zaAzl961/9PwRWGgTxdwOwc2v6apiyg031r8EOpAB7uq9Uf16S9ht9lA0rNrXpmi9tIv84pWCOHVe21/j4cW6+AoCdxVFyOTCEvESc7TGRnB+yKIk1muHXkg7k7OXX/jhS2GD4rZ0snaLnm372wuAmpw/xXNXn0JT9jb+lPmPPPe88Jz32BEqgsogEuSx49uQLdlPKgV2XHf6jMJdH9ckDmNJ+jcCI11twJOz+RruGKAdx1vnoH52nHVkDtqAQEmtHpHyCDUsMvfZw6/ak4YLIs3T+gLIdJlDkEWBWiS0T/Gr4i3EGfLJFqJr2oL1qzh+XrEZR3dN5TfOzuUMW8DyUqo6tswTO7XUHesJ28V6Olga7d+dCFp0e7xih9Xxe3B+QdpA40D2j+HkjNUN9wYjqvKHJcsA5LHAlZHCaw+ODshqM7po+A7UkiPvTnNMYp/CKsC95LWKvqhtpqhx59lg6yczqXURe/1pa2Bd4NUL8KV1y/UEiqCmsUfql/alQ9EpYfUoszQAsJpoplx/0Y37GkRvr69tMGyYg4slfBBztTlgYRws8tsEgG0x3DBAGuJaX+PrER8HlceoHu012vW45+hrIfLjTenE2Ve1xBXLVmLKELzd94NNEUq4ZQ2mqHrJmOHZc=
+    secure: UaIF9LBsh8qyxQowLMsNXisxDFcpVBB0YSuOXId5gTbM46pJfegYgYojlOJJ6/nJ21MQcuL9X6pzFVJ/wH77hqxsA9KUXTXMk+fR2HwWqqhdUNWiVyGbRdcT/5v9A0QoSY35LcsN0rhlIE1MrTWJ/QylTdlBenrJLrPrBPiFW4D1lcSZWrwZdwW2wSJSYU05fuU+I0+6LUk+qY9m3TGTnM9D3o2eYtl72vTFd21EtkZrr0t74BA9apOflGhQM83OHq4bn7bleW5efnD0yKHz2kx1T9GejLO0s5VNsd2z/FaczWo4o60KJCISE4twvwUeKnMlhLrdsjQG77oTTrlpbeSwbFiQ4BH7Tu2RRd/PXWDV5MKeu/ihGwV9F1cowKsS08h/5A+NquB9M1TXSpZlfqQ7VikAgcZRFARWrd4N64dZ3ZjLcTF391eKcWjgA71+6hiuVq92VnJxhuYNukJH62chp2vDLT4UqzMKXyMpRmIu+zydm+XkZyU2Fxamp8C0/segIljD7STZ2eG/g+vRWu/obx7whmBad2d35/it9GDSHzwZ8AbAD6G4VvRV8OnytaFNuNRrNqn7zANJ5uhL/Jj3FQytRBiotc9OnSo75rPyQSRSnLUM/eypt4PcyktY5HNG74nxQem9hD0pCTNH9WmFZJb3swZk0/9Zvc5QIgM=
   file: miui-nx531j-Developer-7.0.zip
   skip_cleanup: true
   on:
