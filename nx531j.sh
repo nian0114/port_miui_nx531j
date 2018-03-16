@@ -1536,7 +1536,7 @@ if [ -d tools/third-app ];then
 fi
 
 cd final
-zip -q -r "../miui-$DEVICE-$Type-$VERSION-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
+zip -q -r "../miui-$DEVICE-$Type-7.0.zip" 'boot.img' 'META-INF' 'system' 'firmware-update' 'data' 'RADIO'
 cd ..
 
 sudo umount $PORTS_ROOT/workspace/output

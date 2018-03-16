@@ -10,14 +10,14 @@ script:
 - ./nx531j.sh
 
 before_install:
-- sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+- sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config p7zip-full unzip
 - ./cos.sh
 
 deploy:
   provider: releases
   api_key:
     secure: 0Mvm5TWaIt4YJkA0S5Q24cDBx3v7zNwkMxaW+zaAzl961/9PwRWGgTxdwOwc2v6apiyg031r8EOpAB7uq9Uf16S9ht9lA0rNrXpmi9tIv84pWCOHVe21/j4cW6+AoCdxVFyOTCEvESc7TGRnB+yKIk1muHXkg7k7OXX/jhS2GD4rZ0snaLnm372wuAmpw/xXNXn0JT9jb+lPmPPPe88Jz32BEqgsogEuSx49uQLdlPKgV2XHf6jMJdH9ckDmNJ+jcCI11twJOz+RruGKAdx1vnoH52nHVkDtqAQEmtHpHyCDUsMvfZw6/ak4YLIs3T+gLIdJlDkEWBWiS0T/Gr4i3EGfLJFqJr2oL1qzh+XrEZR3dN5TfOzuUMW8DyUqo6tswTO7XUHesJ28V6Olga7d+dCFp0e7xih9Xxe3B+QdpA40D2j+HkjNUN9wYjqvKHJcsA5LHAlZHCaw+ODshqM7po+A7UkiPvTnNMYp/CKsC95LWKvqhtpqhx59lg6yczqXURe/1pa2Bd4NUL8KV1y/UEiqCmsUfql/alQ9EpYfUoszQAsJpoplx/0Y37GkRvr69tMGyYg4slfBBztTlgYRws8tsEgG0x3DBAGuJaX+PrER8HlceoHu012vW45+hrIfLjTenE2Ve1xBXLVmLKELzd94NNEUq4ZQ2mqHrJmOHZc=
-  file: miui-nx531j-*-7.0.zip
+  file: miui-nx531j-Developer-7.0.zip
   skip_cleanup: true
   on:
     repo: nian0114/port_miui_nx531j
