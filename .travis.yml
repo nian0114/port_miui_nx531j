@@ -13,7 +13,9 @@ deploy:
   provider: releases
   api_key:
     secure: UaIF9LBsh8qyxQowLMsNXisxDFcpVBB0YSuOXId5gTbM46pJfegYgYojlOJJ6/nJ21MQcuL9X6pzFVJ/wH77hqxsA9KUXTXMk+fR2HwWqqhdUNWiVyGbRdcT/5v9A0QoSY35LcsN0rhlIE1MrTWJ/QylTdlBenrJLrPrBPiFW4D1lcSZWrwZdwW2wSJSYU05fuU+I0+6LUk+qY9m3TGTnM9D3o2eYtl72vTFd21EtkZrr0t74BA9apOflGhQM83OHq4bn7bleW5efnD0yKHz2kx1T9GejLO0s5VNsd2z/FaczWo4o60KJCISE4twvwUeKnMlhLrdsjQG77oTTrlpbeSwbFiQ4BH7Tu2RRd/PXWDV5MKeu/ihGwV9F1cowKsS08h/5A+NquB9M1TXSpZlfqQ7VikAgcZRFARWrd4N64dZ3ZjLcTF391eKcWjgA71+6hiuVq92VnJxhuYNukJH62chp2vDLT4UqzMKXyMpRmIu+zydm+XkZyU2Fxamp8C0/segIljD7STZ2eG/g+vRWu/obx7whmBad2d35/it9GDSHzwZ8AbAD6G4VvRV8OnytaFNuNRrNqn7zANJ5uhL/Jj3FQytRBiotc9OnSo75rPyQSRSnLUM/eypt4PcyktY5HNG74nxQem9hD0pCTNH9WmFZJb3swZk0/9Zvc5QIgM=
-  file: miui-nx531j-Developer-7.0.zip
+  file:
+    - "miui-nx531j-Developer-7.0.zip"
+    - "OTA-nx531j-Developer.zip"
   skip_cleanup: true
   on:
     repo: nian0114/port_miui_nx531j

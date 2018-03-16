@@ -79,6 +79,8 @@ rm -rf $PORTS_ROOT/stockrom
 
 VERSION=`grep "ro.build.version.incremental" output/build.prop|cut -d"=" -f2`
 
+git tag "$(date +'%Y%m%d%H%M%S')-$Type-$VERSION"
+
 cd $PORTS_ROOT/workspace
 if [ -d output/framework/$CPU ];then
 	echo "Start Odex System ..."
@@ -1545,8 +1547,13 @@ rm -rf workspace final/*
 if [ -f /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ]; then
     cd tools/OTA
     . build/envsetup.sh
-    ./tools/releasetools/ota_from_target_files -k build/security/testkey -i /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ../../target/$DEVICE-$Type-target_files.zip ./OTA-$DEVICE-$Type-$VERSION.zip
+    ./tools/releasetools/ota_from_target_files -k build/security/testkey -i /tmp/cosfs/target/$DEVICE-$Type-target_files.zip ../../target/$DEVICE-$Type-target_files.zip ../../OTA-$DEVICE-$Type.zip
 		cd $PORTS_ROOT
 fi
 
+if [ -f OTA-$DEVICE-$Type.zip ]; then
+    echo "OTA is support!"
+else
+	  touch OTA-$DEVICE-$Type.zip
+fi
 mv target/$DEVICE-$Type-target_files.zip /tmp/cosfs/miui_target/$DEVICE-$Type-target_files.zip
