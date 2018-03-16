@@ -5,7 +5,7 @@ cd cosfs
 make
 sudo make install
 
-echo ${bucket}:${access-key-id}:${access-key-secret} > /home/travis/passwd-cosfs
+echo ${bucket}:${accesskeyid}:${accesskeysecret} > /home/travis/passwd-cosfs
 chmod 640 /home/travis/passwd-cosfs
 mkdir /tmp/cosfs
 cosfs ${appid}:${bucket} /tmp/cosfs -ourl=http://cn-east.myqcloud.com -odbglevel=info
